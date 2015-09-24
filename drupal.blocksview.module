@@ -1,0 +1,38 @@
+<?php
+/**
+ * @file
+ * Code for the  Refer Blocks feature.
+ */
+
+
+/**
+ * Implements hook_block_view().
+ */
+function refer_blocks_block_view($delta = '') {
+
+  $path = drupal_get_path('module', 'refer_blocks');
+
+  switch ($delta) {
+
+    case 'most_popular':
+      $block['subject'] = t('Most Popular');
+      $viewed = views_embed_view('most_popular', 'block');
+      $shared = views_embed_view('most_popular', 'block_1');
+      $block['content'] = '<div role="tabpanel" class="content-most-popular">
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#viewed" aria-controls="viewed" role="tab" data-toggle="tab">Viewed</a></li>
+    <li role="presentation"><a href="#shared" aria-controls="shared" role="tab" data-toggle="tab">Shared</a></li>
+    <li role="presentation"><a href="#commented" aria-controls="commented" role="tab" data-toggle="tab">Commented</a></li>
+  </ul>
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="viewed">' . $viewed . '</div>
+    <div role="tabpanel" class="tab-pane" id="shared">'. $shared .'</div>
+    <div role="tabpanel" class="tab-pane" id="commented">{Commented}</div>
+  </div>
+</div>';
+      return $block;
+
+  }
+}
