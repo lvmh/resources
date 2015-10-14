@@ -1,0 +1,31 @@
+<style>
+@import url(http://fonts.googleapis.com/css?family=Bevan);
+@import url(http://fonts.googleapis.com/css?family=Lobster+Two&text=%26);
+
+h1 {
+  font-family: Lobster Two, Bevan;
+  text-ALIGN: center;
+  font-size: 12vw;
+  margin-top: 0;
+}
+
+/* Just for the explanation */
+
+p {
+  width: 70vw;
+  margin: 1em auto 0;
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
+code {
+  background: #ccc;
+  padding: 0 0.5em;
+}
+</style>
+
+<p>Simple subsetting and inheritance trick using Google Fonts. The key part is the <code>text=%26</code> parameter in the Lobster Two font <code>@import</code>. This makes Google send a font containing just the "&amp;" character.</p>
+
+<!-- Look, Mum, no <span>s! -->
+<h1>ROCK & ROLL</h1>
+
