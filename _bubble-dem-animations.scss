@@ -1,0 +1,10 @@
+@mixin bubble-dem($property, $change) {
+    -webkit-transition: $property ease-out 0.3s;
+    -moz-transition: $property ease-out 0.3s;
+    -o-transition: $property ease-out 0.3s;
+    transition: $property ease-out 0.3s;
+
+    &:hover {
+      #{$property}: $change;
+    }
+}
